@@ -1,1 +1,0 @@
-# ChargingChampionsPreseason2017
