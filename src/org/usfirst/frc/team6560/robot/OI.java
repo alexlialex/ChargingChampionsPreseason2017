@@ -1,39 +1,93 @@
 package org.usfirst.frc.team6560.robot;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-
-import org.usfirst.frc.team6560.robot.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc.team6560.robot.commands.*;
+import org.usfirst.frc.team6560.robot.RobotMap.Joysticks;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
+ * Holds everything to be used by the Operator Interface
  */
 public class OI {
-	//// CREATING BUTTONS
-	// One type of button is a joystick button which is any button on a
-	//// joystick.
-	// You create one by telling it which joystick it's on and which button
-	// number it is.
-	// Joystick stick = new Joystick(port);
-	// Button button = new JoystickButton(stick, buttonNumber);
+	public final Joystick gamepad;
+	public final Joystick secondaryRemote;
 
-	// There are a few additional built in buttons you can use. Additionally,
-	// by subclassing Button you can create custom triggers and bind those to
-	// commands the same as any other Button.
+	public OI() {
+		gamepad = new Joystick(Joysticks.GAMEPAD);
+		secondaryRemote = new Joystick(Joysticks.SECONDARY_CONTROLLER);
 
-	//// TRIGGERING COMMANDS WITH BUTTONS
-	// Once you have a button, it's trivial to bind it to a button in one of
-	// three ways:
+		JoystickButton aButton = new JoystickButton(gamepad, Joysticks.A_BUTTON);
+		JoystickButton bButton = new JoystickButton(gamepad, Joysticks.B_BUTTON);
+		JoystickButton xButton = new JoystickButton(gamepad, Joysticks.X_BUTTON);
+		JoystickButton yButton = new JoystickButton(gamepad, Joysticks.Y_BUTTON);
+		JoystickButton leftIndex = new JoystickButton(gamepad, Joysticks.LEFT_INDEX_BUTTON);
+		JoystickButton rightIndex = new JoystickButton(gamepad, Joysticks.RIGHT_INDEX_BUTTON);
+		JoystickButton backButton = new JoystickButton(gamepad, Joysticks.BACK_BUTTON);
+		JoystickButton startButton = new JoystickButton(gamepad, Joysticks.START_BUTTON);
+		JoystickButton leftAxisButton = new JoystickButton(gamepad, Joysticks.LEFT_AXIS_BUTTON);
+		JoystickButton rightAxisButton = new JoystickButton(gamepad, Joysticks.RIGHT_AXIS_BUTTON);
 
-	// Start the command when the button is pressed and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenPressed(new ExampleCommand());
+		JoystickButton trigger = new JoystickButton(secondaryRemote, Joysticks.TRIGGER_BUTTON);
+		JoystickButton rightThumb = new JoystickButton(secondaryRemote, Joysticks.RIGHT_THUMB_BUTTON);
+		JoystickButton button3 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_3);
+		JoystickButton button4 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_4);
+		JoystickButton button5 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_5);
+		JoystickButton button6 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_6);
+		JoystickButton button7 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_7);
+		JoystickButton button8 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_8);
+		JoystickButton button9 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_9);
+		JoystickButton button10 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_10);
+		JoystickButton button11 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_11);
+		JoystickButton button12 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_12);
 
-	// Run the command while the button is being held down and interrupt it once
-	// the button is released.
-	// button.whileHeld(new ExampleCommand());
+		//Gamepad Commands
+		
+		//Secondary Commands
 
-	// Start the command when the button is released and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenReleased(new ExampleCommand());
+	}
+
+	// Axes
+	public double getLeftXAxis() {
+		return gamepad.getRawAxis(Joysticks.LEFT_X_AXIS);
+	}
+
+	public double getLeftYAxis() {
+		return gamepad.getRawAxis(Joysticks.LEFT_Y_AXIS);
+	}
+
+	public double getLeftTrigger() {
+		return gamepad.getRawAxis(Joysticks.LEFT_TRIGGER);
+	}
+
+	public double getRightTrigger() {
+		return gamepad.getRawAxis(Joysticks.RIGHT_TRIGGER);
+	}
+
+	public double getRightXAxis() {
+		return gamepad.getRawAxis(Joysticks.RIGHT_X_AXIS);
+	}
+
+	public double getRightYAxis() {
+		return gamepad.getRawAxis(Joysticks.RIGHT_Y_AXIS);
+	}
+
+	public int getPOV() {
+		return gamepad.getPOV();
+	}
+
+	public double getSecondaryXAxis() {
+		return secondaryRemote.getRawAxis(Joysticks.SECOND_X_AXIS);
+	}
+
+	public double getSecondaryYAxis() {
+		return secondaryRemote.getRawAxis(Joysticks.SECOND_Y_AXIS);
+	}
+
+	public double getSecondaryZAxis() {
+		return secondaryRemote.getRawAxis(Joysticks.SECOND_Z_AXIS);
+	}
+
+	public double getSecondarySlider() {
+		return secondaryRemote.getRawAxis(Joysticks.SECOND_SLIDER);
+	}
 }
