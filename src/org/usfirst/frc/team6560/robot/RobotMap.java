@@ -6,8 +6,8 @@ package org.usfirst.frc.team6560.robot;
 
 public class RobotMap {
 	public static class Joysticks {
-		public static final int GAMEPAD = 5;
-		public static final int SECONDARY_CONTROLLER = 0;
+		public static final int GAMEPAD = 0;
+		public static final int SECONDARY_CONTROLLER = 1;
 		
 		//Gamepad buttons
 		public static final int A_BUTTON = 1;

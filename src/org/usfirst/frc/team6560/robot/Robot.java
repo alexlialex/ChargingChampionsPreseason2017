@@ -2,17 +2,19 @@
 package org.usfirst.frc.team6560.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team6560.robot.subsystems.*;
+import org.usfirst.frc.team6560.robot.subsystems.Drive;
 import org.usfirst.frc.team6560.robot.commands.*;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+	public static Drive drive;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -20,6 +22,11 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		
+		//Initialize subsystems
+		drive = new Drive();
+		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 	}
 
 	@Override
