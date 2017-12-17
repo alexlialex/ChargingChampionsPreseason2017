@@ -35,6 +35,6 @@ public class DriveWithJoysticks extends Command {
     }
 
     protected void interrupted() {
-    	Robot.drive.stopDrive();
+    	end();
     }
 }
