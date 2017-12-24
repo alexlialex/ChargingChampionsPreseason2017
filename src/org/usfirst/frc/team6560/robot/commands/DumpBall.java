@@ -6,17 +6,17 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShootGear extends Command {
+public class DumpBall extends Command {
 
-    public ShootGear() {
-        requires(Robot.gearCollector);
+    public DumpBall() {
+        requires(Robot.ballCollector);
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
-    	Robot.gearCollector.shootGear();
+    	Robot.ballCollector.dumpBall();
     }
 
     protected boolean isFinished() {
@@ -24,7 +24,7 @@ public class ShootGear extends Command {
     }
 
     protected void end() {
-    	Robot.gearCollector.stopIntake();
+    	Robot.ballCollector.stopIntake();
     }
 
     protected void interrupted() {

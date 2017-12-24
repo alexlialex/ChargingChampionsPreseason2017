@@ -9,24 +9,24 @@ import com.ctre.CANTalon;
 /**
  *
  */
-public class GearCollector extends Subsystem {
+public class BallCollector extends Subsystem {
 
-    CANTalon suckerMotor = new CANTalon(Can.SUCKER);
+    CANTalon intakeMotor = new CANTalon(Can.INTAKE);
     
     public void stopIntake() {
-    	suckerMotor.set(0);
+    	intakeMotor.set(0);
     }
     
-    public void suckGear() {
-    	suckerMotor.set(1.0);
+    public void intakeBall() {
+    	intakeMotor.set(1.0);
     }
     
-    public void shootGear() {
-    	suckerMotor.set(-0.2);
+    public void dumpBall() {
+    	intakeMotor.set(-0.2);
     }
 
     public void initDefaultCommand() {
-        setDefaultCommand(new SuckGear());
+        setDefaultCommand(new IntakeBall());
     }
 }
 

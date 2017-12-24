@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -15,7 +16,8 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static Drive drive;
-	public static GearCollector gearCollector;
+	public static BallCollector ballCollector;
+	public static NetworkTable table;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -28,7 +30,10 @@ public class Robot extends IterativeRobot {
 		drive = new Drive();
 		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
-		gearCollector = new GearCollector();
+		ballCollector = new BallCollector();
+		
+		//Initialize subtable
+		table = NetworkTable.getTable("path");
 	}
 
 	@Override
