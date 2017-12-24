@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team6560.robot.subsystems.*;
 import org.usfirst.frc.team6560.robot.commands.*;
+import org.usfirst.frc.team6560.robot.autonomus.*;
+
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
@@ -34,6 +36,10 @@ public class Robot extends IterativeRobot {
 		
 		//Initialize subtable
 		table = NetworkTable.getTable("path");
+		
+		//Add autonomous programs to chooser
+		chooser.addDefault("Drive straight", new DriveStraightAuto());
+		SmartDashboard.putData("Auto mode chooser", chooser);
 	}
 
 	@Override
