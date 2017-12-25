@@ -14,6 +14,7 @@ public class DriveStraight extends Command {
         speed = speedValue;
     }
 
+
     protected void initialize() {
         Robot.drive.gyro.reset();
     }

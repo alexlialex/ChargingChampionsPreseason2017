@@ -19,15 +19,28 @@ public class Drive extends Subsystem {
     public ADXRS450_Gyro gyro = new ADXRS450_Gyro();
     public static final double kP = 0.01; //Proportionality constant
     
-    
+    /**
+     * Recalibrates gyro and sets current angle to 0
+     */
     public Drive() {
     	gyro.calibrate();
     	gyro.reset();
     }
+    
+    /**
+     * Mecanum drive with input from the joystick
+     * 
+     * @param strafe Left/right movement value
+     * @param forward Forward/backward movement value
+     * @param rotation Rotation value
+     */
     public void driveWithJoysticks(double strafe, double forward, double rotation) {
     	drivetrain.mecanumDrive_Cartesian(strafe, forward, rotation, 0);
     }
     
+    /**
+     * Stops all motors
+     */
     public void stopDrive() {
     	leftTopMotor.set(0);
     	leftBottomMotor.set(0);
@@ -35,13 +48,28 @@ public class Drive extends Subsystem {
     	rightBottomMotor.set(0);
     }
     
+    /**
+     * Gyro assisted straight movement
+     * @param Speed value scaled from 0.0 - 1.0 
+     */
     public void driveStraight(double speed) {
     	speed = Math.abs(speed);
       	int angle = getGyroAngle();
-    	drivetrain.drive(speed, -1 * angle * kP);
+    	drivetrain.drive(speed, angle * kP);
     	Timer.delay(0.004); //4 millisecond delay to allow for gyro to calibrate
     }
+    
+    public void spinLeft(double speed) {
+    	drivetrain.mecanumDrive_Cartesian(0, 0, -speed, 0);
+    }
+    
+    public void spinRight(double speed) {
+    	drivetrain.mecanumDrive_Cartesian(0, 0, speed, 0);
+    }
 
+    /**
+     * @return Current gyro header
+     */
     public int getGyroAngle() {
     	return (int)Math.round(gyro.getAngle());
     }
