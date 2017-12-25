@@ -17,7 +17,9 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static Drive drive;
 	public static BallCollector ballCollector;
+	public static BallShooter ballShooter;
 	public static NetworkTable table;
+	public static VisionControl visionControl;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -31,6 +33,8 @@ public class Robot extends IterativeRobot {
 		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		ballCollector = new BallCollector();
+		ballShooter = new BallShooter();
+		visionControl = new VisionControl();
 		
 		//Initialize subtable
 		table = NetworkTable.getTable("path");
