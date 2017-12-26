@@ -18,7 +18,6 @@ public class Robot extends IterativeRobot {
 	public static Drive drive;
 	public static BallCollector ballCollector;
 	public static BallShooter ballShooter;
-	public static NetworkTable table;
 	public static VisionControl visionControl;
 
 	Command autonomousCommand;
@@ -35,9 +34,6 @@ public class Robot extends IterativeRobot {
 		ballCollector = new BallCollector();
 		ballShooter = new BallShooter();
 		visionControl = new VisionControl();
-		
-		//Initialize subtable
-		table = NetworkTable.getTable("path");
 	}
 
 	@Override
