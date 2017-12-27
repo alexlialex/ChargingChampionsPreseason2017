@@ -2,40 +2,30 @@ package org.usfirst.frc.team6560.robot.commands;
 
 import org.usfirst.frc.team6560.robot.Robot;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class VisionDrive extends Command {
-	double visionMotorSpeed;
-	double visionWaitTime;
-	double minOffset;
+public class SmartDashboardPutXOffset extends Command {
 
-    public VisionDrive() {
-        requires(Robot.drive);
+    public SmartDashboardPutXOffset() {
         requires(Robot.visionControl);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	visionMotorSpeed = Robot.prefs.getDouble("Vision Motor Speed", 1.0);
-		visionWaitTime = Robot.prefs.getDouble("Vision Wait Time", 0.100);
-		minOffset = Robot.prefs.getDouble("Minimum Offset", 0.1);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double xOffset = Robot.visionControl.getXOffset();
-    	//run based on input above
-    	Robot.drive.driveWithJoysticks(xOffset*visionMotorSpeed, 0, 0);
-    	Timer.delay(visionWaitTime);
+    	SmartDashboard.putNumber("X Offset", Robot.visionControl.getXOffset());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(Robot.visionControl.getXOffset())<minOffset;
+        return false;
     }
 
     // Called once after isFinished returns true
