@@ -9,6 +9,9 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import org.usfirst.frc.team6560.robot.subsystems.*;
+import org.usfirst.frc.team6560.robot.commands.*;
+import org.usfirst.frc.team6560.robot.autonomus.*;
+
 public class Robot extends IterativeRobot {
 	
 	public static Preferences prefs = Preferences.getInstance();
@@ -38,13 +41,16 @@ public class Robot extends IterativeRobot {
 		ballCollector = new BallCollector();
 		ballShooter = new BallShooter();
 		visionControl = new VisionControl();
-		
+    
 		//SmartDashboard.putData(Scheduler.getInstance());
 		//SmartDashboard.putData("Intake Ball", new IntakeBall());
 		//SmartDashboard.putData("Shoot Ball", new ShootBall());
 		//SmartDashboard.putData("Vision Drive", new VisionDrive());
 		//SmartDashboard.putData("Get X Offset", new SmartDashboardPutXOffset());
 		
+		//Add autonomous programs to chooser
+		chooser.addDefault("Drive straight", new DriveStraightAuto());
+		SmartDashboard.putData("Auto mode chooser", chooser);
 	}
 
 	@Override
