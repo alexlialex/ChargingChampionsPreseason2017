@@ -1,7 +1,6 @@
 package org.usfirst.frc.team6560.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import org.usfirst.frc.team6560.robot.commands.*;
 import org.usfirst.frc.team6560.robot.RobotMap.Can;
 
 import com.ctre.CANTalon;
@@ -26,7 +25,7 @@ public class BallCollector extends Subsystem {
     }
 
     public void initDefaultCommand() {
-        setDefaultCommand(new IntakeBall());
+        
     }
 }
 

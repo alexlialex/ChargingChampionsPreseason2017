@@ -41,10 +41,10 @@ public class OI {
 		JoystickButton button12 = new JoystickButton(secondaryRemote, Joysticks.BUTTON_12);
 
 		//Gamepad Commands
+		//aButton.whileHeld(new VisionDrive());
+		//yButton.toggleWhenPressed(new DriveWithJoysticksAndSlider());
 		
 		//Secondary Commands
-		
-		//keyboard Commands
 		
 
 	}
