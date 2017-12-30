@@ -52,11 +52,11 @@ public class RobotMap {
 	
 	public static class Can {
 		//Drive Motors
-		public static final int LEFT_FWD_MOTOR = 1;
-		public static final int LEFT_REAR_MOTOR = 0;
-		public static final int RIGHT_FWD_MOTOR = 3;
-		public static final int RIGHT_REAR_MOTOR = 2;
-		
+		public static final int LEFT_FWD_MOTOR = 2;
+		public static final int LEFT_REAR_MOTOR = 3;
+		public static final int RIGHT_FWD_MOTOR = 0;
+		public static final int RIGHT_REAR_MOTOR = 1;
+
 		//Subsystem Motors
 		public static final int INTAKE = 4;
 		public static final int SHOOTER = 5;

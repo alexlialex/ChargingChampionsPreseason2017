@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team6560.robot.Robot;
 
 /**
- * Mecanum Drive with joysticks
+ * Mecanum Drive with joystick input
  */
 
 public class DriveWithJoysticks extends Command {
