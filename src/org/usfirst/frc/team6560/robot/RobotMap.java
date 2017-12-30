@@ -58,8 +58,8 @@ public class RobotMap {
 		public static final int RIGHT_REAR_MOTOR = 1;
 
 		//Subsystem Motors
-		public static final int INTAKE = 4;
-		public static final int SHOOTER = 5;
+		public static final int INTAKE = 14;
+		public static final int SHOOTER = 13;
 
 	}
 	

@@ -40,8 +40,8 @@ public class Robot extends IterativeRobot {
 		
 		//Initialize subsystems
 		drive = new Drive();
-		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		ballCollector = new BallCollector();
 		ballShooter = new BallShooter();
 		visionControl = new VisionControl();
@@ -51,6 +51,7 @@ public class Robot extends IterativeRobot {
 		
 		SmartDashboard.putData(Scheduler.getInstance());
 		SmartDashboard.putData("Intake Ball", new IntakeBall());
+		SmartDashboard.putData("Dump Ball", new DumpBall());
 		SmartDashboard.putData("Shoot Ball", new ShootBall());
 		SmartDashboard.putData("Vision Drive", new VisionDrive());
 		SmartDashboard.putData("Get X Offset", new SmartDashboardPutXOffset());

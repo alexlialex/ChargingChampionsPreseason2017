@@ -46,7 +46,8 @@ public class OI {
 		
 		//Secondary Commands
 		rightThumb.whileHeld(new IntakeBall());
-		trigger.whileActive(new ShootBall());
+		trigger.whileHeld(new ShootBall());
+		button3.whileHeld(new DumpBall());
 
 	}
 

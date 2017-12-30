@@ -17,7 +17,7 @@ public class BallCollector extends Subsystem {
     }
     
     public void intakeBall() {
-    	intakeMotor.set(1.0);
+    	intakeMotor.set(0.8);
     }
     
     public void dumpBall() {
