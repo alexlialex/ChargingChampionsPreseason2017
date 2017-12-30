@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team6560.robot.subsystems.*;
 import org.usfirst.frc.team6560.robot.commands.*;
+import org.usfirst.frc.team6560.robot.autonomus.*;
 
 public class Robot extends IterativeRobot {
 	
@@ -44,7 +45,7 @@ public class Robot extends IterativeRobot {
 		ballCollector = new BallCollector();
 		ballShooter = new BallShooter();
 		visionControl = new VisionControl();
-		
+
 		//the initialization of the OI must be after the initialization of the subsystems to be able to map out commands to the buttons in the OI
 		oi = new OI();
 		
@@ -54,6 +55,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Vision Drive", new VisionDrive());
 		SmartDashboard.putData("Get X Offset", new SmartDashboardPutXOffset());
 		
+		//Add autonomous programs to chooser
+		chooser.addDefault("Drive straight", new DriveStraightAuto());
+		SmartDashboard.putData("Auto mode chooser", chooser);
 	}
 
 	@Override
