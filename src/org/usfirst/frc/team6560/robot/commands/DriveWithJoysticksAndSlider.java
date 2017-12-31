@@ -24,7 +24,7 @@ public class DriveWithJoysticksAndSlider extends Command {
     	xAxis = Robot.oi.getLeftXAxis();
     	yAxis = Robot.oi.getLeftYAxis();
     	rotation = Robot.oi.getRightXAxis();
-    	magnitude = ((Robot.oi.getSecondarySlider() - 1.0) / 2.0);
+    	magnitude = ((Robot.oi.getSecondarySlider() + 1.0) / 2.0);
     	Robot.drive.driveWithJoysticks(xAxis*magnitude, yAxis*magnitude, rotation*magnitude);
     }
 

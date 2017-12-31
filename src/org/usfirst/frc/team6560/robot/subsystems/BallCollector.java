@@ -20,8 +20,16 @@ public class BallCollector extends Subsystem {
     	intakeMotor.set(0.8);
     }
     
+    public void intakeBall(double magnitude) {
+    	intakeMotor.set(magnitude);
+    }
+    
     public void dumpBall() {
     	intakeMotor.set(-0.2);
+    }
+    
+    public void dumpBall(double magnitude) {
+    	intakeMotor.set(-1*magnitude);
     }
 
     public void initDefaultCommand() {

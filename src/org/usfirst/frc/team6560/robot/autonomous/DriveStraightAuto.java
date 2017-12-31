@@ -1,4 +1,4 @@
-package org.usfirst.frc.team6560.robot.autonomus;
+package org.usfirst.frc.team6560.robot.autonomous;
 
 import org.usfirst.frc.team6560.robot.commands.DriveStraightTime;
 

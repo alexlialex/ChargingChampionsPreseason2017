@@ -48,6 +48,7 @@ public class OI {
 		rightThumb.whileHeld(new IntakeBall());
 		trigger.whileHeld(new ShootBall());
 		button3.whileHeld(new DumpBall());
+		button9.whileHeld(new IntakeBallWithSlider());
 
 	}
 

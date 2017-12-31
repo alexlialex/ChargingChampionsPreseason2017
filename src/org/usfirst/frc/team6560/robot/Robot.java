@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team6560.robot.subsystems.*;
+import org.usfirst.frc.team6560.robot.autonomous.*;
 import org.usfirst.frc.team6560.robot.commands.*;
-import org.usfirst.frc.team6560.robot.autonomus.*;
 
 public class Robot extends IterativeRobot {
 	
@@ -58,6 +58,7 @@ public class Robot extends IterativeRobot {
 		
 		//Add autonomous programs to chooser
 		chooser.addDefault("Drive straight", new DriveStraightAuto());
+		chooser.addObject("Vision Drive", new VisionDrive());
 		SmartDashboard.putData("Auto mode chooser", chooser);
 	}
 

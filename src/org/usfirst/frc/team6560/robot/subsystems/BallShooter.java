@@ -21,6 +21,10 @@ public class BallShooter extends Subsystem {
     	shooterMotor.set(1.0);
     }
     
+    public void shootBall(double magnitude) {
+    	shooterMotor.set(magnitude);
+    }
+    
     public void initDefaultCommand() {
     	
     }
